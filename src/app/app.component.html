@@ -1,0 +1,19 @@
+<div>Plain Old Subject:
+  <ng-container *ngIf="subject$ | async as subject">
+     <span>{{ subject }}</span>
+  </ng-container>
+</div>
+<div>Replay Subject:
+  <ng-container *ngIf="replaySubject$ | async as replaySubject">
+    <span>{{ replaySubject }}</span>
+  </ng-container>
+</div>
+<div>
+  <ng-container *ngIf="behaviorSubject$ | async as behaviorSubject">
+    Behavior Subject: <span>{{ behaviorSubject }}</span>
+  </ng-container>
+</div>
+<div>
+  <input [(ngModel)]="nextValue" value="nextValue" />
+  <button (click)="callNext(nextValue)">call next</button>
+</div>
